@@ -55,6 +55,17 @@ export const TOOLS: Tool[] = [
     category: 'sa-financial',
     icon: '❄️',
     keywords: ['debt snowball calculator', 'debt avalanche calculator', 'debt payoff calculator', 'debt free calculator'],
+    featured: true,
+  },
+  // Document Tools
+  {
+    slug: 'pdf-merge-split',
+    name: 'PDF Merge & Split',
+    description: 'Merge multiple PDF files into one, or split pages from a PDF. All processed client-side — your files never leave your device.',
+    category: 'document',
+    icon: '📄',
+    keywords: ['merge pdf', 'split pdf', 'combine pdf', 'extract pdf pages', 'free pdf tools'],
+    featured: true,
   },
   // Everyday Calculators
   {
