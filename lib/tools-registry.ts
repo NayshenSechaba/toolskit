@@ -8,6 +8,7 @@ export interface Tool {
   icon: string
   keywords: string[]
   featured?: boolean
+  color?: 'red' | 'green' | 'blue' | 'teal' | 'amber'
 }
 
 export const TOOLS: Tool[] = [
@@ -20,6 +21,7 @@ export const TOOLS: Tool[] = [
     icon: '🏠',
     keywords: ['bond calculator', 'home loan calculator south africa', 'mortgage calculator sa', 'amortisation calculator'],
     featured: true,
+    color: 'teal',
   },
   {
     slug: 'paye-calculator-south-africa',
@@ -29,6 +31,7 @@ export const TOOLS: Tool[] = [
     icon: '💼',
     keywords: ['paye calculator south africa', 'salary tax calculator sa', 'income tax calculator sars', 'uif calculator'],
     featured: true,
+    color: 'teal',
   },
   {
     slug: 'vat-calculator-south-africa',
@@ -38,6 +41,7 @@ export const TOOLS: Tool[] = [
     icon: '🧾',
     keywords: ['vat calculator south africa', 'vat inclusive calculator', 'vat exclusive calculator', '15% vat'],
     featured: true,
+    color: 'teal',
   },
   {
     slug: 'compound-interest-calculator',
@@ -47,6 +51,7 @@ export const TOOLS: Tool[] = [
     icon: '📈',
     keywords: ['compound interest calculator', 'savings calculator south africa', 'investment growth calculator'],
     featured: true,
+    color: 'teal',
   },
   {
     slug: 'debt-payoff-calculator',
@@ -56,6 +61,7 @@ export const TOOLS: Tool[] = [
     icon: '❄️',
     keywords: ['debt snowball calculator', 'debt avalanche calculator', 'debt payoff calculator', 'debt free calculator'],
     featured: true,
+    color: 'teal',
   },
   // Document Tools
   {
@@ -66,6 +72,7 @@ export const TOOLS: Tool[] = [
     icon: '📄',
     keywords: ['merge pdf', 'split pdf', 'combine pdf', 'extract pdf pages', 'free pdf tools'],
     featured: true,
+    color: 'red',
   },
   {
     slug: 'pdf-rotate',
@@ -75,6 +82,7 @@ export const TOOLS: Tool[] = [
     icon: '🔄',
     keywords: ['rotate pdf', 'turn pdf', 'change pdf orientation', 'rotate pages'],
     featured: true,
+    color: 'red',
   },
   {
     slug: 'pdf-remove-pages',
@@ -84,6 +92,7 @@ export const TOOLS: Tool[] = [
     icon: '🗑️',
     keywords: ['remove pdf pages', 'delete pdf pages', 'cut pages from pdf'],
     featured: true,
+    color: 'red',
   },
   {
     slug: 'pdf-watermark',
@@ -93,6 +102,7 @@ export const TOOLS: Tool[] = [
     icon: '🔏',
     keywords: ['watermark pdf', 'add watermark to pdf', 'stamp pdf', 'confidential watermark'],
     featured: true,
+    color: 'red',
   },
   {
     slug: 'pdf-page-numbers',
@@ -101,6 +111,7 @@ export const TOOLS: Tool[] = [
     category: 'document',
     icon: '🔢',
     keywords: ['page numbers pdf', 'number pdf pages', 'add numbering to pdf'],
+    color: 'red',
   },
   {
     slug: 'pdf-organize',
@@ -110,6 +121,7 @@ export const TOOLS: Tool[] = [
     icon: '🗂️',
     keywords: ['organize pdf', 'reorder pdf pages', 'move pages in pdf', 'sort pdf'],
     featured: true,
+    color: 'red',
   },
   // Everyday Calculators
   {
@@ -120,6 +132,7 @@ export const TOOLS: Tool[] = [
     icon: '%',
     keywords: ['percentage calculator', 'percent calculator', 'percentage change', 'what is x percent of y'],
     featured: true,
+    color: 'amber',
   },
   {
     slug: 'bmi-calculator',
@@ -128,6 +141,7 @@ export const TOOLS: Tool[] = [
     category: 'everyday',
     icon: '⚖️',
     keywords: ['bmi calculator', 'body mass index calculator', 'bmi calculator metric'],
+    color: 'amber',
   },
   {
     slug: 'tip-calculator',
@@ -136,6 +150,7 @@ export const TOOLS: Tool[] = [
     category: 'everyday',
     icon: '🍽️',
     keywords: ['tip calculator', 'bill split calculator', 'restaurant tip calculator'],
+    color: 'amber',
   },
   // Text & Productivity Tools
   {
@@ -146,6 +161,7 @@ export const TOOLS: Tool[] = [
     icon: '🔐',
     keywords: ['password generator', 'strong password generator', 'secure password generator', 'random password'],
     featured: true,
+    color: 'blue',
   },
   {
     slug: 'word-counter',
@@ -154,6 +170,7 @@ export const TOOLS: Tool[] = [
     category: 'text',
     icon: '📝',
     keywords: ['word counter', 'character counter', 'word count tool', 'reading time calculator'],
+    color: 'blue',
   },
   {
     slug: 'qr-code-generator',
@@ -163,6 +180,7 @@ export const TOOLS: Tool[] = [
     icon: '📱',
     keywords: ['qr code generator', 'free qr code', 'qr code maker', 'generate qr code'],
     featured: true,
+    color: 'blue',
   },
 ]
 

@@ -38,10 +38,6 @@ export default function HomePage() {
             <div className="hero-stat-label">Free tools</div>
           </div>
           <div className="hero-stat">
-            <div className="hero-stat-num">0</div>
-            <div className="hero-stat-label">Server uploads</div>
-          </div>
-          <div className="hero-stat">
             <div className="hero-stat-num">2025/26</div>
             <div className="hero-stat-label">SARS tax year</div>
           </div>
@@ -78,7 +74,7 @@ export default function HomePage() {
                 aria-label={`Open ${tool.name}`}
               >
                 {tool.featured && <span className="featured-badge">Popular</span>}
-                <div className="tool-card-icon">{tool.icon}</div>
+                <div className={`tool-card-icon badge-${tool.color || 'teal'}`}>{tool.icon}</div>
                 <h2 className="tool-card-name">{tool.name}</h2>
                 <p className="tool-card-desc">{tool.description}</p>
                 <div className="tool-card-arrow">
