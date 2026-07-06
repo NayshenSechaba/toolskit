@@ -19,9 +19,9 @@ export default function Navbar() {
 
         <nav>
           <ul className="nav-links">
-            <li><Link href="/#sa-financial" className="nav-link">🇿🇦 SA Financial</Link></li>
-            <li><Link href="/#universal-financial" className="nav-link">💵 Universal Financial</Link></li>
             <li><Link href="/#document" className="nav-link">📄 Document Tools</Link></li>
+            <li><Link href="/#universal-financial" className="nav-link">💵 Universal Financial</Link></li>
+            <li><Link href="/#sa-financial" className="nav-link">SA Financial</Link></li>
           </ul>
         </nav>
 
