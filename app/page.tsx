@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Free South African financial calculators: bond calculator, PAYE/UIF calculator, VAT calculator, compound interest, and more. Plus text tools, QR generators, and everyday calculators.',
 }
 
-const CATEGORY_ORDER: ToolCategory[] = ['sa-financial', 'document', 'everyday', 'text']
+const CATEGORY_ORDER: ToolCategory[] = ['sa-financial', 'universal-financial', 'document', 'everyday', 'text']
 
 export default function HomePage() {
   const toolsByCategory = CATEGORY_ORDER.map(cat => ({

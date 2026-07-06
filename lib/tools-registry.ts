@@ -1,4 +1,4 @@
-export type ToolCategory = 'sa-financial' | 'everyday' | 'text' | 'document'
+export type ToolCategory = 'sa-financial' | 'universal-financial' | 'everyday' | 'text' | 'document'
 
 export interface Tool {
   slug: string
@@ -47,7 +47,7 @@ export const TOOLS: Tool[] = [
     slug: 'compound-interest-calculator',
     name: 'Compound Interest & Savings Calculator',
     description: 'Project your savings growth with regular contributions, compounding frequency, and different interest rates.',
-    category: 'sa-financial',
+    category: 'universal-financial',
     icon: '📈',
     keywords: ['compound interest calculator', 'savings calculator south africa', 'investment growth calculator'],
     featured: true,
@@ -57,7 +57,7 @@ export const TOOLS: Tool[] = [
     slug: 'debt-payoff-calculator',
     name: 'Debt Snowball vs Avalanche Calculator',
     description: 'Compare the debt snowball and avalanche methods to find the fastest, cheapest way to pay off your debts.',
-    category: 'sa-financial',
+    category: 'universal-financial',
     icon: '❄️',
     keywords: ['debt snowball calculator', 'debt avalanche calculator', 'debt payoff calculator', 'debt free calculator'],
     featured: true,
@@ -188,22 +188,27 @@ export const CATEGORIES: Record<ToolCategory, { label: string; description: stri
   'sa-financial': {
     label: 'SA Financial',
     description: 'South Africa-specific financial calculators built with local tax tables and rates',
-    color: '#2563EB',
+    color: '#0d9488',
+  },
+  'universal-financial': {
+    label: 'Universal Financial',
+    description: 'General financial calculators for compound interest, debt payoff, and savings projection',
+    color: '#0d9488',
   },
   'everyday': {
     label: 'Everyday Calculators',
     description: 'Quick, useful calculators for daily life',
-    color: '#059669',
+    color: '#d97706',
   },
   'text': {
     label: 'Text & Productivity',
     description: 'Tools to work smarter with text and content',
-    color: '#7C3AED',
+    color: '#2563eb',
   },
   'document': {
     label: 'Document Tools',
     description: 'Process and convert your documents and files',
-    color: '#DC2626',
+    color: '#ef4444',
   },
 }
 

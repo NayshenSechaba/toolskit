@@ -3,8 +3,10 @@ import { Wrench } from 'lucide-react'
 import { TOOLS, CATEGORIES, ToolCategory } from '@/lib/tools-registry'
 
 const SA_TOOLS = TOOLS.filter(t => t.category === 'sa-financial')
+const UNIV_TOOLS = TOOLS.filter(t => t.category === 'universal-financial')
 const EVERYDAY_TOOLS = TOOLS.filter(t => t.category === 'everyday')
 const TEXT_TOOLS = TOOLS.filter(t => t.category === 'text')
+const DOC_TOOLS = TOOLS.filter(t => t.category === 'document')
 
 export default function Footer() {
   return (
@@ -34,9 +36,20 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="footer-col-title">Tools</div>
+            <div className="footer-col-title">Universal Financial</div>
             <ul className="footer-links">
-              {[...EVERYDAY_TOOLS, ...TEXT_TOOLS].map(tool => (
+              {UNIV_TOOLS.map(tool => (
+                <li key={tool.slug}>
+                  <Link href={`/tools/${tool.slug}`}>{tool.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <div className="footer-col-title">Other Tools</div>
+            <ul className="footer-links">
+              {[...EVERYDAY_TOOLS, ...TEXT_TOOLS, ...DOC_TOOLS].map(tool => (
                 <li key={tool.slug}>
                   <Link href={`/tools/${tool.slug}`}>{tool.name}</Link>
                 </li>
@@ -47,7 +60,6 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} ToolsKit. All calculations are indicative only — consult a professional for financial decisions.</p>
-          <p>Built for South Africa 🇿🇦</p>
         </div>
       </div>
     </footer>
