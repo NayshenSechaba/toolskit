@@ -94,7 +94,7 @@ export default function TipCalculatorPage() {
                     padding: '0.45rem 0.875rem',
                     border: `2px solid ${customTip === '' && tipPct === p ? 'var(--primary)' : 'var(--surface-border)'}`,
                     borderRadius: 'var(--radius-sm)',
-                    background: customTip === '' && tipPct === p ? '#EFF6FF' : 'white',
+                    background: customTip === '' && tipPct === p ? '#fef2f2' : 'white',
                     color: customTip === '' && tipPct === p ? 'var(--primary)' : 'var(--text-secondary)',
                     fontWeight: 700,
                     fontSize: '0.875rem',

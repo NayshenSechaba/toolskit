@@ -100,7 +100,7 @@ export default function PercentageCalculatorPage() {
                   padding: '0.6rem 0.75rem',
                   border: `2px solid ${mode === m.key ? 'var(--primary)' : 'var(--surface-border)'}`,
                   borderRadius: 'var(--radius-sm)',
-                  background: mode === m.key ? '#EFF6FF' : 'white',
+                  background: mode === m.key ? '#fef2f2' : 'white',
                   color: mode === m.key ? 'var(--primary)' : 'var(--text-secondary)',
                   fontWeight: 600,
                   fontSize: '0.8rem',
