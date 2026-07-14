@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: {
@@ -29,6 +30,12 @@ export default function RootLayout({
   return (
     <html lang="en-ZA">
       <body>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6279329252340316"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <Navbar />
         <main>{children}</main>
         <Footer />
