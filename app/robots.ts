@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://toolskit.co.za/sitemap.xml',
+    sitemap: 'https://pdfcalculate.com/sitemap.xml',
   }
 }

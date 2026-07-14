@@ -2,7 +2,7 @@ import { TOOLS } from '@/lib/tools-registry'
 import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://toolskit.co.za'
+  const baseUrl = 'https://pdfcalculate.com'
 
   const toolPages = TOOLS.map((tool) => ({
     url: `${baseUrl}/tools/${tool.slug}`,
