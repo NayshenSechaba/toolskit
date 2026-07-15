@@ -16,10 +16,10 @@ export default function Footer() {
           <div>
             <div className="footer-brand">
               <Wrench size={18} />
-              ToolsKit
+              PDFCalculate
             </div>
             <p className="footer-desc">
-              Free South African financial calculators and online tools.
+              Free online PDF utilities, financial calculators, and utility tools.
               All calculations run in your browser — no data sent to any server.
             </p>
           </div>
@@ -59,7 +59,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} ToolsKit. All calculations are indicative only — consult a professional for financial decisions.</p>
+          <p>© {new Date().getFullYear()} PDFCalculate. All calculations are indicative only — consult a professional for financial decisions.</p>
         </div>
       </div>
     </footer>

@@ -5,15 +5,15 @@ import Footer from '@/components/layout/Footer'
 
 export const metadata: Metadata = {
   title: {
-    default: 'ToolsKit — Free SA Financial Calculators & Online Tools',
-    template: '%s | ToolsKit',
+    default: 'PDFCalculate — Free PDF Tools & Financial Calculators',
+    template: '%s | PDFCalculate',
   },
-  description: 'Free South African financial calculators, productivity tools, and everyday utilities. PAYE, bond, VAT calculators built for South Africa.',
-  keywords: ['calculators south africa', 'free tools', 'bond calculator', 'paye calculator', 'vat calculator south africa'],
+  description: 'Free PDF tools, document utilities, and financial calculators. Merge, split, organize, watermark, or sign PDFs, plus compound interest and tax calculators.',
+  keywords: ['pdf tools', 'free calculators', 'pdf merge', 'pdf split', 'pdf organize', 'pdfcalculate'],
   openGraph: {
     type: 'website',
-    siteName: 'ToolsKit',
-    locale: 'en_ZA',
+    siteName: 'PDFCalculate',
+    locale: 'en_US',
   },
   robots: {
     index: true,

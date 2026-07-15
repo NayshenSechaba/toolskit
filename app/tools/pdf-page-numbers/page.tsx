@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import PdfPageNumbers from './PdfPageNumbers'
 
 export const metadata: Metadata = {
-  title: 'Free Add PDF Page Numbers | ToolsKit',
+  title: 'Free Add PDF Page Numbers | PDFCalculate',
   description: 'Number your PDF pages automatically. Customizable position, styling, cover page exclusion, and formatting options.',
 }
 

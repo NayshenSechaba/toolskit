@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { Download, RefreshCw } from 'lucide-react'
 
 export default function QrCodeGeneratorPage() {
-  const [text, setText] = useState('https://toolskit.co.za')
+  const [text, setText] = useState('https://pdfcalculate.com')
   const [size, setSize] = useState(256)
   const [color, setColor] = useState('#000000')
   const [bgColor, setBgColor] = useState('#ffffff')

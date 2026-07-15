@@ -5,8 +5,8 @@ import type { Metadata } from 'next'
 import AdSlot from '@/components/layout/AdSlot'
 
 export const metadata: Metadata = {
-  title: 'ToolsKit — Free SA Financial Calculators & Online Tools',
-  description: 'Free South African financial calculators: bond calculator, PAYE/UIF calculator, VAT calculator, compound interest, and more. Plus text tools, QR generators, and everyday calculators.',
+  title: 'PDFCalculate — Free PDF Tools & Financial Calculators',
+  description: 'Free PDF tools and financial calculators: merge, split, organize, watermark, or rotate PDFs, plus compound interest, VAT, and bond calculators.',
 }
 
 const CATEGORY_ORDER: ToolCategory[] = ['document', 'universal-financial', 'everyday', 'text', 'sa-financial']

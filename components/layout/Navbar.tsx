@@ -13,7 +13,7 @@ export default function Navbar() {
       <div className="navbar-inner">
         <Link href="/" className="logo">
           <Wrench size={20} />
-          ToolsKit
+          PDFCalculate
           <span className="logo-badge">Free</span>
         </Link>
 
