@@ -14,14 +14,14 @@ export default function Navbar() {
         <Link href="/" className="logo">
           <Wrench size={20} />
           PDFCalculate
-          <span className="logo-badge">Free</span>
         </Link>
 
         <nav>
           <ul className="nav-links">
-            <li><Link href="/#document" className="nav-link">📄 Document Tools</Link></li>
-            <li><Link href="/#universal-financial" className="nav-link">💵 Universal Financial</Link></li>
-            <li><Link href="/#sa-financial" className="nav-link">SA Financial</Link></li>
+            <li><Link href="/#pdf" className="nav-link">PDF Tools</Link></li>
+            <li><Link href="/#word" className="nav-link">Word Tools</Link></li>
+            <li><Link href="/#excel" className="nav-link">Excel Tools</Link></li>
+            <li><Link href="/#calculator" className="nav-link">Calculators</Link></li>
           </ul>
         </nav>
 

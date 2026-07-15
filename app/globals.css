@@ -1,31 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --primary: #0d9488;
-  --primary-light: #14b8a6;
-  --primary-dark: #0f766e;
-  --accent: #d97706;
-  --accent-light: #f59e0b;
-  --purple: #7c3aed;
-  --red: #ef4444;
-  --surface: #ffffff;
-  --surface-alt: #f8fafc;
-  --surface-border: #e2e8f0;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #94a3b8;
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
-  --radius: 10px;
+  --primary: #2C2C2A;
+  --primary-light: #5F5E5A;
+  --primary-dark: #1F1F1E;
+  --bg-page: #FAF8F4;
+  --bg-card: #FFFFFF;
+  --text-primary: #2C2C2A;
+  --text-secondary: #5F5E5A;
+  --text-muted: #888780;
+  --surface-border: #E5E4DE;
+  
+  --radius-card: 12px;
   --radius-sm: 6px;
-  --radius-lg: 14px;
-  --radius-xl: 18px;
+  --radius-lg: 12px;
 }
 
 * {
@@ -38,10 +30,17 @@ html {
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: var(--surface-alt);
+  background-color: var(--bg-page);
   color: var(--text-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: -0.02em;
 }
 
 /* ========== NAVBAR ========== */
@@ -112,44 +111,32 @@ body {
 
 /* ========== HERO ========== */
 .hero {
-  background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+  background: var(--bg-page);
   border-bottom: 1px solid var(--surface-border);
-  padding: 5rem 1.5rem 4rem;
+  padding: 6rem 1.5rem 4rem;
   text-align: center;
 }
 
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: white;
-  border: 1px solid var(--surface-border);
-  color: var(--primary);
-  padding: 0.3rem 0.875rem;
-  border-radius: 100px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  margin-bottom: 1.25rem;
-  box-shadow: var(--shadow-sm);
-}
-
 .hero h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 800;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  font-weight: 700;
   letter-spacing: -0.03em;
   color: var(--text-primary);
-  margin: 0 0 1.25rem;
-  line-height: 1.2;
+  margin: 0 auto 1.25rem;
+  line-height: 1.1;
+  max-width: 800px;
 }
 
 .hero h1 span {
-  color: var(--primary);
+  color: inherit;
+  border-bottom: 3px solid #2C2C2A;
 }
 
 .hero p {
   font-size: 1.125rem;
   color: var(--text-secondary);
-  max-width: 560px;
+  max-width: 600px;
   margin: 0 auto 2rem;
 }
 
@@ -165,10 +152,11 @@ body {
 }
 
 .hero-stat-num {
+  font-family: 'JetBrains Mono', monospace;
   font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--primary);
-  letter-spacing: -0.03em;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
 }
 
 .hero-stat-label {
@@ -213,110 +201,170 @@ body {
   margin-right: 0.5rem;
 }
 
-/* ========== TOOL CARDS ========== */
+/* ========== TOOL CARDS & BENTO GRID ========== */
 .tools-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* On desktop, allow a featured interactive card to span 2 columns */
+@media (min-width: 768px) {
+  .featured-calculator-card {
+    grid-column: span 2;
+  }
 }
 
 .tool-card {
-  background: white;
-  border: 1px solid var(--surface-border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-card);
   padding: 1.5rem;
   text-decoration: none;
-  color: inherit;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  transition: all 0.2s ease;
-  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease;
   position: relative;
   overflow: hidden;
-}
-
-.tool-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary), var(--primary-light));
-  opacity: 0;
-  transition: opacity 0.2s ease;
+  border: 1px solid var(--surface-border);
+  background-color: var(--bg-card);
 }
 
 .tool-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-  border-color: #ccfbf1;
+  transform: translateY(-2px);
 }
 
-.tool-card:hover::before {
-  opacity: 1;
+/* Category styling mappings */
+/* PDF Tools (Red) */
+.tool-card.cat-pdf {
+  background-color: #FCEBEB;
+  color: #501313;
+  border: none;
+}
+.tool-card.cat-pdf.featured-card {
+  border: 2px solid #A32D2D;
+}
+.tool-card.cat-pdf .tool-card-icon {
+  color: #A32D2D;
+  background: rgba(163, 45, 45, 0.08);
+}
+.tool-card.cat-pdf .tool-card-name {
+  color: #501313;
+}
+.tool-card.cat-pdf .tool-card-desc {
+  color: rgba(80, 19, 19, 0.8);
+}
+.tool-card.cat-pdf .tool-badge {
+  background-color: #F7C1C1;
+  color: #791F1F;
+}
+.tool-card.cat-pdf .tool-card-arrow {
+  color: #A32D2D;
 }
 
-.tool-card:hover .tool-card-icon {
-  transform: scale(1.05);
+/* Word Tools (Blue) */
+.tool-card.cat-word {
+  background-color: #E6F1FB;
+  color: #042C53;
+  border: none;
+}
+.tool-card.cat-word.featured-card {
+  border: 2px solid #185FA5;
+}
+.tool-card.cat-word .tool-card-icon {
+  color: #185FA5;
+  background: rgba(24, 95, 165, 0.08);
+}
+.tool-card.cat-word .tool-card-name {
+  color: #042C53;
+}
+.tool-card.cat-word .tool-card-desc {
+  color: rgba(4, 44, 83, 0.8);
+}
+.tool-card.cat-word .tool-badge {
+  background-color: #B5D4F4;
+  color: #0C447C;
+}
+.tool-card.cat-word .tool-card-arrow {
+  color: #185FA5;
+}
+
+/* Excel Tools (Green) */
+.tool-card.cat-excel {
+  background-color: #EAF3DE;
+  color: #173404;
+  border: none;
+}
+.tool-card.cat-excel.featured-card {
+  border: 2px solid #3B6D11;
+}
+.tool-card.cat-excel .tool-card-icon {
+  color: #3B6D11;
+  background: rgba(59, 109, 17, 0.08);
+}
+.tool-card.cat-excel .tool-card-name {
+  color: #173404;
+}
+.tool-card.cat-excel .tool-card-desc {
+  color: rgba(23, 52, 4, 0.8);
+}
+.tool-card.cat-excel .tool-badge {
+  background-color: #C0DD97;
+  color: #27500A;
+}
+.tool-card.cat-excel .tool-card-arrow {
+  color: #3B6D11;
+}
+
+/* Calculators (Amber) */
+.tool-card.cat-calculator {
+  background-color: #FAEEDA;
+  color: #412402;
+  border: none;
+}
+.tool-card.cat-calculator.featured-card {
+  border: 2px solid #BA7517;
+}
+.tool-card.cat-calculator .tool-card-icon {
+  color: #BA7517;
+  background: rgba(186, 117, 23, 0.08);
+}
+.tool-card.cat-calculator .tool-card-name {
+  color: #412402;
+}
+.tool-card.cat-calculator .tool-card-desc {
+  color: rgba(65, 36, 2, 0.8);
+}
+.tool-card.cat-calculator .tool-badge {
+  background-color: #F0D9A8;
+  color: #633806;
+}
+.tool-card.cat-calculator .tool-card-arrow {
+  color: #BA7517;
 }
 
 .tool-card-icon {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   margin-bottom: 0.25rem;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.tool-card-icon.badge-red {
-  background-color: #fef2f2;
-  border: 1px solid #fee2e2;
-  color: #ef4444;
-}
-
-.tool-card-icon.badge-green {
-  background-color: #f0fdf4;
-  border: 1px solid #dcfce7;
-  color: #16a34a;
-}
-
-.tool-card-icon.badge-blue {
-  background-color: #eff6ff;
-  border: 1px solid #dbeafe;
-  color: #2563eb;
-}
-
-.tool-card-icon.badge-teal {
-  background-color: #f0fdfa;
-  border: 1px solid #ccfbf1;
-  color: #0d9488;
-}
-
-.tool-card-icon.badge-amber {
-  background-color: #fffbeb;
-  border: 1px solid #fef3c7;
-  color: #d97706;
 }
 
 .tool-card-name {
-  font-size: 1rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.15rem;
   font-weight: 700;
-  color: var(--text-primary);
   margin: 0;
   letter-spacing: -0.01em;
 }
 
 .tool-card-desc {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
+  font-size: 0.875rem;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .tool-card-arrow {
@@ -325,19 +373,16 @@ body {
   align-items: center;
   gap: 0.25rem;
   font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--primary);
+  font-weight: 700;
 }
 
-.featured-badge {
+.tool-badge {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: linear-gradient(135deg, #FEF3C7, #FDE68A);
-  color: #92400E;
-  padding: 2px 8px;
-  border-radius: 100px;
-  font-size: 0.7rem;
+  top: 1.25rem;
+  right: 1.25rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.65rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -516,7 +561,7 @@ body {
 .input:focus {
   border-color: var(--primary);
   background: white;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  box-shadow: 0 0 0 3px rgba(44, 44, 42, 0.15);
 }
 
 .input-with-prefix {
@@ -550,7 +595,7 @@ body {
 .select:focus {
   border-color: var(--primary);
   background-color: white;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  box-shadow: 0 0 0 3px rgba(44, 44, 42, 0.15);
 }
 
 .toggle-group {
@@ -577,12 +622,12 @@ body {
 
 .toggle-btn.active {
   background: var(--primary);
-  color: white;
+  color: #FAF8F4;
 }
 
 .toggle-btn:hover:not(.active) {
-  background: #EFF6FF;
-  color: var(--primary);
+  background: rgba(44, 44, 42, 0.05);
+  color: var(--text-primary);
 }
 
 .checkbox-field {
@@ -617,37 +662,37 @@ body {
   font-weight: 700;
   font-family: 'Inter', sans-serif;
   cursor: pointer;
-  transition: all 0.18s ease;
-  border: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  border: 1px solid transparent;
   text-decoration: none;
   letter-spacing: -0.01em;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: white;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  background-color: #2C2C2A;
+  color: #FAF8F4;
+  border-color: #2C2C2A;
 }
 
 .btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.25);
+  background-color: #454543;
+  border-color: #454543;
 }
 
 .btn-primary:active {
-  transform: translateY(0);
+  background-color: #1F1F1E;
+  border-color: #1F1F1E;
 }
 
 .btn-secondary {
-  background: var(--surface-alt);
-  color: var(--text-secondary);
-  border: 1.5px solid var(--surface-border);
+  background-color: transparent;
+  color: #2C2C2A;
+  border: 1px solid #888780;
 }
 
 .btn-secondary:hover {
-  background: #f0fdfa;
-  color: var(--primary);
-  border-color: #ccfbf1;
+  background-color: rgba(44, 44, 42, 0.05);
+  border-color: #2C2C2A;
 }
 
 .btn-full {
@@ -684,14 +729,16 @@ body {
 }
 
 .results-hero-value {
+  font-family: 'JetBrains Mono', monospace;
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: 500;
   color: var(--text-primary);
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   line-height: 1;
 }
 
 .results-hero-value span {
+  font-family: 'Inter', sans-serif;
   font-size: 1.5rem;
   color: var(--text-secondary);
   font-weight: 600;
@@ -726,10 +773,11 @@ body {
 }
 
 .result-item-value {
+  font-family: 'JetBrains Mono', monospace;
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--text-primary);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .result-item-value.positive {
@@ -780,12 +828,16 @@ body {
   border-bottom: 1px solid #F1F5F9;
   text-align: right;
   color: var(--text-primary);
-  font-variant-numeric: tabular-nums;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  font-size: 0.8rem;
 }
 
 .data-table td:first-child {
   text-align: left;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
+  font-size: 0.85rem;
 }
 
 .data-table tr:last-child td {

@@ -2,11 +2,10 @@ import Link from 'next/link'
 import { Wrench } from 'lucide-react'
 import { TOOLS, CATEGORIES, ToolCategory } from '@/lib/tools-registry'
 
-const SA_TOOLS = TOOLS.filter(t => t.category === 'sa-financial')
-const UNIV_TOOLS = TOOLS.filter(t => t.category === 'universal-financial')
-const EVERYDAY_TOOLS = TOOLS.filter(t => t.category === 'everyday')
-const TEXT_TOOLS = TOOLS.filter(t => t.category === 'text')
-const DOC_TOOLS = TOOLS.filter(t => t.category === 'document')
+const PDF_TOOLS = TOOLS.filter(t => t.category === 'pdf')
+const WORD_TOOLS = TOOLS.filter(t => t.category === 'word')
+const EXCEL_TOOLS = TOOLS.filter(t => t.category === 'excel')
+const CALC_TOOLS = TOOLS.filter(t => t.category === 'calculator')
 
 export default function Footer() {
   return (
@@ -19,15 +18,15 @@ export default function Footer() {
               PDFCalculate
             </div>
             <p className="footer-desc">
-              Free online PDF utilities, financial calculators, and utility tools.
-              All calculations run in your browser — no data sent to any server.
+              Free online PDF utilities, financial calculators, and word tools.
+              All calculations run in your browser — private and serverless.
             </p>
           </div>
 
           <div>
-            <div className="footer-col-title">SA Financial</div>
+            <div className="footer-col-title">PDF Tools</div>
             <ul className="footer-links">
-              {SA_TOOLS.map(tool => (
+              {PDF_TOOLS.map(tool => (
                 <li key={tool.slug}>
                   <Link href={`/tools/${tool.slug}`}>{tool.name}</Link>
                 </li>
@@ -36,9 +35,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="footer-col-title">Universal Financial</div>
+            <div className="footer-col-title">Word Tools</div>
             <ul className="footer-links">
-              {UNIV_TOOLS.map(tool => (
+              {WORD_TOOLS.map(tool => (
                 <li key={tool.slug}>
                   <Link href={`/tools/${tool.slug}`}>{tool.name}</Link>
                 </li>
@@ -47,9 +46,20 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="footer-col-title">Other Tools</div>
+            <div className="footer-col-title">Excel Tools</div>
             <ul className="footer-links">
-              {[...EVERYDAY_TOOLS, ...TEXT_TOOLS, ...DOC_TOOLS].map(tool => (
+              {EXCEL_TOOLS.map(tool => (
+                <li key={tool.slug}>
+                  <Link href={`/tools/${tool.slug}`}>{tool.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <div className="footer-col-title">Calculators</div>
+            <ul className="footer-links">
+              {CALC_TOOLS.map(tool => (
                 <li key={tool.slug}>
                   <Link href={`/tools/${tool.slug}`}>{tool.name}</Link>
                 </li>
